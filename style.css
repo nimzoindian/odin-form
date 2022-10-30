@@ -1,0 +1,91 @@
+main, form, fieldset, input, label {
+    border: 1px solid red;
+}
+
+body {
+    display: flex;
+}
+
+body, main {
+    height: 100vh;
+    margin: 0;
+    min-height: 650px;
+}
+
+.cc, main {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+.front {
+    display: flex;
+    flex-direction: column;
+    background-image: url("images/background.jpg");
+}
+
+.title {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.171);
+    width: clamp(33vw, 500px, 50vw);
+    margin-top: 90px;
+}
+
+#title {
+    font-family: 'Monoton', cursive;
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.66);
+}
+
+#icon {
+    width: 3rem;
+}
+
+.cc {
+    text-align: center;
+    margin-top: auto;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.66);
+    background-color: rgba(0, 0, 0, 0.171);
+}
+
+.cc > h6 {
+    margin: 2vh;
+}
+
+main {
+    margin: auto;
+    background-color: rgb(231, 231, 231);
+    flex-grow: 1;
+}
+
+fieldset {
+    box-sizing: border-box;
+    border: 0px;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+}
+
+fieldset > * {
+    margin: 6px 6px 0px 6px;
+    justify-self: start;
+}
+
+button {
+    color: rgb(255, 255, 255);
+    background-color: rgb(99, 201, 73);
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid rgb(75, 75, 75);
+    border-radius: 6px;
+    padding: 5px;
+    margin: 6px;
+
+}
