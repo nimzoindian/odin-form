@@ -1,18 +1,18 @@
-main, form, fieldset, input, label {
-    border: 1px solid red;
+.main, .main > span, form, .inputs, input, label, legend {
+    /*border: 1px solid red;*/
 }
 
 body {
     display: flex;
 }
 
-body, main {
+body, .main {
     height: 100vh;
     margin: 0;
     min-height: 650px;
 }
 
-.cc, main {
+.cc, .main {
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -31,15 +31,16 @@ body, main {
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.171);
-    width: clamp(33vw, 500px, 50vw);
+    width: 40vw;
     margin-top: 90px;
 }
 
 #title {
-    font-family: 'Monoton', cursive;
+    font-family: 'Yeseva One', cursive;
     font-size: 2.5rem;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.66);
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.66);
+    margin-left: 2px;
 }
 
 #icon {
@@ -58,19 +59,27 @@ body, main {
     margin: 2vh;
 }
 
-main {
+.main {
+    display: flex;
+    flex-direction: column;
     margin: auto;
+    flex: auto;
+    justify-content: center;
     background-color: rgb(231, 231, 231);
-    flex-grow: 1;
+    width: 60vw;
 }
 
 fieldset {
+    margin: auto;
+    margin-left: 24px;
     box-sizing: border-box;
     border: 0px;
     background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(3, auto);
+    min-width: 180px;
+    max-width: 630px;
 }
 
 fieldset > * {
@@ -83,9 +92,27 @@ button {
     background-color: rgb(99, 201, 73);
     font-size: 1rem;
     font-weight: bold;
-    border: 1px solid rgb(75, 75, 75);
+    border: none;
     border-radius: 6px;
-    padding: 5px;
-    margin: 6px;
+    box-shadow: 0px 1px 3px black;
+    padding: 8px 16px;
+    margin: 36px 0px 18px 24px;
+}
 
+.main > span {
+    margin-left: 24px;
+}
+
+.info {
+    width: auto;
+    padding: 6px;
+    background-color: white;
+    box-shadow: 0px 3px 10px gray;
+}
+
+legend {
+    text-align: start;
+    font-size: 2rem;
+    margin-top: 6px;
+    color: rgb(44, 44, 44);
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Yeseva+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -21,27 +21,39 @@
                 <h6>Made by: Nimzoindian @ GitHub</h6>
             </div>
         </div>
-        <main>
+        <div class="main">
             <form>
-                <legend>Sign Up</legend>
-                <fieldset class="inputs">
-                    <label for="first-name">First Name</label>
-                    <label for="last-name">Last Name</label>
-                    <input id="first-name" name="first-name" type="text" required/>
-                    <input id="last-name" name="last-name" type="text" required/>
-                    <label for="email">Email</label>
-                    <label for="phonenum">Phone Number</label>
-                    <input id="email" name="email" type="email" required/>
-                    <input id="phonenum" name="phonenum" type="text" required/>
-                    <label for="pw">Password</label>
-                    <label for="cpw">Confirm Password</label>
-                    <input id="pw" name="pw" type="password" required/>
-                    <input id="cpw" name="cpw" type="password" required/>
-                </fieldset>
+                <div class="info">
+                    <fieldset class="inputs">
+                        <legend>Sign Up</legend>
+                        <label for="first-name">First Name</label>
+                        <label for="last-name">Last Name</label>
+                        <input id="first-name" name="first-name" type="text" placeholder="Bobby"  maxlength="10" required/>
+                        <input id="last-name" name="last-name" type="text" placeholder="Fischer" maxlength="10" required/>
+                        <label for="email">Email</label>
+                        <label for="phonenum">Phone Number</label>
+                        <input id="email" name="email" type="email" placeholder="example@url.com" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required/>
+                        <input id="phonenum" name="phonenum" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" type="text" required/>
+                        <label for="pw">Password</label>
+                        <label for="cpw">Confirm Password</label>
+                        <input id="pw" name="pw" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+                        <input id="cpw" name="cpw" type="password" oninput="check(this)" required/>
+                        <script>
+                            function check(input) {
+                                if (input.value != document.getElementById('pw').value) {
+                                    input.setCustomValidity('Passwords must match');
+                                } else {
+                                    //input is valid reset error
+                                    input.setCustomValidity('');
+                                }
+                            }
+                        </script>
+                    </fieldset>
+                </div>
                 <button type="submit">Create Account</button>
             </form>
             <span>Already have an account? <a href="">Log in</a></span>
-        </main>
+        </div>
     </div>
 </body>
 </html>
